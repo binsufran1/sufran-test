@@ -82,6 +82,21 @@
         <button type="button" onclick="calculateScore()">عرض النتيجة</button>
     </form>
 
+    <hr>
+<div id="feedback-section" style="margin-top: 20px;">
+  <h3>✨ تقييمك للنموذج</h3>
+
+  <label for="resultFeedback">هل كانت النتيجة واقعية؟</label><br>
+  <select id="resultFeedback" name="resultFeedback" style="margin-bottom: 10px;">
+    <option value="نعم">نعم</option>
+    <option value="إلى حد ما">إلى حد ما</option>
+    <option value="لا">لا</option>
+  </select><br>
+
+  <label for="userMessage">هل لديك رسالة أو تعليق لصاحب النموذج؟</label><br>
+  <textarea id="userMessage" name="userMessage" rows="4" cols="50" placeholder="اكتب رسالتك هنا..." style="margin-top: 5px;"></textarea>
+</div>
+    
     <div class="result" id="resultBox" style="display:none;"></div>
 
     <script>
