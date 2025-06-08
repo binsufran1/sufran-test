@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>كيف ترى الحياة؟</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.8; padding: 20px; background-color: #f9f9f9; color: #222; }
+        h2 { color: #004477; }
+        .question { margin-bottom: 20px; }
+        .result { margin-top: 30px; padding: 10px; background-color: #eef; border: 1px solid #99c; }
+    </style>
+</head>
+<body>
+    <h2>كيف ترى الحياة؟</h2>
+    <p>هذا النموذج مخصص لقياس نظرتك للحياة من خلال مواقف حقيقية. لا توجد إجابة صحيحة أو خاطئة، أجب بصدق، وستحصل على نتيجتك مباشرة.</p>
+    <p>إعداد: محمد حسن سفران<br>بروفيسور بقسم التعليم والتعلم<br>جامعة الملك خالد – المملكة العربية السعودية</p>
+
+    <form id="quizForm">
+        <div class="question">
+            <strong>1. رُفضتَ بعد مقابلة لوظيفة كنت تطمح لها، ماذا تقول؟</strong><br>
+            <input type="radio" name="q1" value="2"> ربما لم أكن الأفضل، وسأسعى للتحسن.<br>
+            <input type="radio" name="q1" value="0"> الحياة لا تعطيني فرصة، الكل ضدي.<br>
+            <input type="radio" name="q1" value="1"> حظ سيء كالعادة، لا أكثر.<br>
+        </div>
+        <div class="question">
+            <strong>2. حدث خلاف بينك وبين أحد الأقرباء بسبب سوء فهم، ما موقفك؟</strong><br>
+            <input type="radio" name="q2" value="0"> هو من بدأ، فلا حاجة للتواصل مجددًا.<br>
+            <input type="radio" name="q2" value="2"> أحاول إصلاح الأمر وفتح باب الحوار.<br>
+            <input type="radio" name="q2" value="1"> الزمن كفيل بحل الأمور.<br>
+        </div>
+        <div class="question">
+            <strong>3. أخفقت في اختبار كان يعني لك الكثير، فماذا تقول لنفسك؟</strong><br>
+            <input type="radio" name="q3" value="2"> سأتعلم من الخطأ وأحاول مجددًا.<br>
+            <input type="radio" name="q3" value="0"> لست ذكيًا بما يكفي.<br>
+            <input type="radio" name="q3" value="1"> ما الفائدة من كل هذا؟<br>
+        </div>
+        <div class="question">
+            <strong>4. أحرجك موقف أمام الآخرين دون قصد، فكيف تتصرف؟</strong><br>
+            <input type="radio" name="q4" value="1"> أحاول تجاهله ولكن أتضايق داخليًا.<br>
+            <input type="radio" name="q4" value="2"> أبتسم وأتعامل معه بخفة ظل.<br>
+            <input type="radio" name="q4" value="0"> أخجل كثيرًا وقد أتجنب الناس لاحقًا.<br>
+        </div>
+        <div class="question">
+            <strong>5. خطيبك أو من تحب رآك ثم قرر الانسحاب، كيف تفسر ذلك؟</strong><br>
+            <input type="radio" name="q5" value="2"> كل شيء قسمة ونصيب، وأنا واثق من نفسي.<br>
+            <input type="radio" name="q5" value="1"> ربما لم أكن كما توقع.<br>
+            <input type="radio" name="q5" value="0"> لا أحد يرضى بي، أكيد فيني خلل.<br>
+        </div>
+        <div class="question">
+            <strong>6. انقلبت خططك فجأة بسبب ظرف طارئ، فكيف تتعامل؟</strong><br>
+            <input type="radio" name="q6" value="2"> أتأقلم بسرعة وأبحث عن بدائل.<br>
+            <input type="radio" name="q6" value="1"> أتضايق قليلاً ثم أهدأ.<br>
+            <input type="radio" name="q6" value="0"> أتوقف عن كل شيء وأحبط.<br>
+        </div>
+        <div class="question">
+            <strong>7. شخص ظلمني وتكلم عني بسوء، ماذا سيكون رد فعلك؟</strong><br>
+            <input type="radio" name="q7" value="2"> أسامحه وأتجاهله قدر الإمكان.<br>
+            <input type="radio" name="q7" value="1"> لا أرد لكن أحتفظ بالألم داخلي.<br>
+            <input type="radio" name="q7" value="0"> لن أنساه أبدًا وسأرد يومًا ما.<br>
+        </div>
+        <div class="question">
+            <strong>8. فُوّتت عليك فرصة كنت تنتظرها طويلًا، فبماذا تشعر؟</strong><br>
+            <input type="radio" name="q8" value="2"> الفرص لا تنتهي، وسأسعى لغيرها.<br>
+            <input type="radio" name="q8" value="1"> أشعر بخيبة ولكن الحياة تستمر.<br>
+            <input type="radio" name="q8" value="0"> دائمًا الفرص تضيع من يدي.<br>
+        </div>
+        <div class="question">
+            <strong>9. عندما ترى من هو أقل منك حظًّا، بماذا تشعر؟</strong><br>
+            <input type="radio" name="q9" value="2"> أحمد الله وأحاول مساعدته إن استطعت.<br>
+            <input type="radio" name="q9" value="0"> أشعر أني قد أكون مثله يومًا.<br>
+            <input type="radio" name="q9" value="1"> أشفق عليه وأتضايق داخليًا فقط.<br>
+        </div>
+        <div class="question">
+            <strong>10. كيف ترى الحياة بشكل عام؟</strong><br>
+            <input type="radio" name="q10" value="0"> مليئة بالظلم والمصاعب ولا أمل.<br>
+            <input type="radio" name="q10" value="2"> حياة تُعاش مرة واحدة وتستحق المحاولة.<br>
+            <input type="radio" name="q10" value="1"> لا بأس بها، يوم حلو ويوم مر.<br>
+        </div>
+
+        <button type="button" onclick="calculateScore()">عرض النتيجة</button>
+    </form>
+
+    <div class="result" id="resultBox" style="display:none;"></div>
+
+    <script>
+        function calculateScore() {
+            let total = 0;
+            for (let i = 1; i <= 10; i++) {
+                const options = document.getElementsByName("q" + i);
+                for (const opt of options) {
+                    if (opt.checked) {
+                        total += parseInt(opt.value);
+                    }
+                }
+            }
+
+            const resultBox = document.getElementById("resultBox");
+            resultBox.style.display = "block";
+
+            let message = "";
+            if (total >= 17) {
+                message = "<strong>🌟 إيجابي التفكير:</strong> لديك نظرة متفائلة ومرنة للحياة، وتُحسن التعامل مع الصعوبات.";
+            } else if (total >= 10) {
+                message = "<strong>⚖️ متوازن التفكير:</strong> أحيانًا تميل للإيجابية وأحيانًا للسلبية، ويمكنك تحسين رؤيتك بالحكمة والتجربة.";
+            } else {
+                message = "<strong>⚠️ سلبي التفكير:</strong> تميل لرؤية الحياة من جانبها المظلم، وقد يفيدك أن تراجع طريقة تفكيرك وتعزز تفاؤلك.";
+            }
+
+            message += "<br><br><em>هذا النموذج لا يُشخّص الحالة النفسية ولا يُغني عن المختص، بل يساعدك في التعرف على نمط تفكيرك.</em>";
+            resultBox.innerHTML = message;
+        }
+    </script>
+</body>
+</html>
