@@ -126,6 +126,22 @@
             message += "<br><br><em>هذا النموذج لا يُشخّص الحالة النفسية ولا يُغني عن المختص، بل يساعدك في التعرف على نمط تفكيرك.</em>";
             resultBox.innerHTML = message;
         }
+      // إرسال البيانات إلى Google Sheets
+const feedback = document.querySelector('textarea[name="userMessage"]');
+const rating = document.querySelector('select[name="resultFeedback"]');
+
+if ((feedback && feedback.value.trim() !== "") || (rating && rating.value !== "")) {
+    const bodyData = feedback=${encodeURIComponent(feedback.value.trim())}&rating=${encodeURIComponent(rating.value)};
+
+    fetch("https://script.google.com/macros/s/AKfyc.../exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: bodyData
+    });
+}
     </script>
 </body>
 </html>
