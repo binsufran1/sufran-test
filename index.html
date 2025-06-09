@@ -4,16 +4,61 @@
   <meta charset="UTF-8">
   <title>كيف أفكر؟</title>
   <style>
-    body { font-family: Tahoma, sans-serif; background: #f0f2f5; padding: 40px; direction: rtl; }
-    .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
-    h1 { color: #004d40; text-align: center; }
-    .question { margin-bottom: 20px; }
-    select { width: 100%; padding: 8px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc; }
-    button { display: block; margin: 30px auto 10px; background: #004d40; color: white; padding: 12px 25px; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
-    .result { display: none; padding: 20px; border-radius: 8px; margin-top: 30px; white-space: pre-wrap; }
+    body {
+      font-family: 'Cairo', Tahoma, sans-serif;
+      background: #f0f2f5;
+      padding: 40px;
+      direction: rtl;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #004d40;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .question {
+      margin-bottom: 25px;
+      font-weight: bold;
+    }
+    .options label {
+      margin-left: 15px;
+      display: inline-block;
+    }
+    .submit-btn {
+      display: block;
+      margin: 30px auto 10px;
+      background: #004d40;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .result {
+      display: none;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+      white-space: pre-wrap;
+    }
     .negative { background: #fdecea; border-right: 6px solid #e53935; }
     .neutral { background: #fff8e1; border-right: 6px solid #f9a825; }
     .positive { background: #e8f5e9; border-right: 6px solid #43a047; }
+    .signature {
+      margin-top: 40px;
+      font-size: 15px;
+      text-align: center;
+      color: #555;
+    }
   </style>
 </head>
 <body>
@@ -22,15 +67,18 @@
     <p>هل تساءلت يومًا: هل طريقتي في التفكير تساعدني… أم تُتعبني؟ هل أنظر للأشياء كما هي، أم كما أخاف أن تكون؟</p>
     <p>من واقع تخصصي في التربية، واهتمامي بأساليب التفكير التي تشكّل قراراتنا ومشاعرنا، صممت هذا المقياس لأساعدك – بطريقة مبسّطة – على التعرف على نمط تفكيرك الغالب: هل هو إيجابي داعم؟ أم سلبي مثقِل؟ أم بينهما؟</p>
     <p>☑ هذا المقياس ليس أداة تشخيصية طبية أو نفسية، بل هو وسيلة تأمل ذاتي تساعدك على رؤية أنماط تفكيرك بشكل أوضح، وتمهّد لك طريق التغيير إن أردت. فكر فيه كـ مرآة داخلية… لا تُظهر لك من أنت، بل كيف ترى.</p>
-    <p>مع رجائي أن يكون هذا المقياس بدايةً لتفكير أصفى، ونظرة أهدأ، وخطوة نحو حياةٍ أسلم.</p>
-    <p><strong>محمد حسن سعيد آل سفران</strong><br>بروفيسور بقسم التعليم والتعلم<br>جامعة الملك خالد – المملكة العربية السعودية</p>
 
     <form id="quizForm">
       <div id="questions"></div>
-      <button type="submit">احسب النتيجة</button>
+      <button type="submit" class="submit-btn">احسب النتيجة</button>
     </form>
 
     <div id="result" class="result"></div>
+
+    <div class="signature">
+      <p>🔹 إن وجدت في هذا المقياس ما يلامس قلبك، فلا تنسَ الدعاء لمن أعدّه.</p>
+      <p>محمد حسن سعيد آل سفران<br>بروفيسور بقسم التعليم والتعلم – جامعة الملك خالد – المملكة العربية السعودية</p>
+    </div>
   </div>
 
   <script>
@@ -54,14 +102,18 @@
 
 📍 عنوان: “رسالة لمن أنهكه التفكير الطويل”
 
-❝ سنوات من التفكير الزائد، والتخطيط لكل سيناريو، والشك في كل احتمال… ماذا غيّرت؟ هل جعلتك أكثر راحة؟ ❞
+❝ سنوات من التفكير الزائد، والتخطيط لكل سيناريو، والشك في كل احتمال…
+ماذا غيّرت؟
+هل جعلك أكثر راحة؟
+هل قللت الخسارات؟
+أم فقط سلبت منك بهجة اللحظة… وحوّلتك إلى مراقب مرهق، لا مشارك في الحياة؟ ❞
 
 🧠 لنتأمل بصدق:
 • الحذر المفرط لم يمنع السوء… لكنه منعك من النوم.
 • التفكير الطويل لم يأتِ بحلّ… بل أتى بالقلق.
 • والاحتفاظ بكل إساءة، لم يُنصفك… بل أثقل قلبك.
 
-🕊 وتذكّر قول الله: “ولا تنسوا الفضل بينكم”
+🕊 وتذكّر قول الله تعالى: “ولا تنسوا الفضل بينكم”
 
 🔹 لا تنسَ أن تدعو لمن كتب هذا المقياس، عسى أن يشملك الله بدعاء من لا تُرد دعوته. 🤍`,
 
@@ -69,7 +121,9 @@
 
 📍 عنوان: “أنت على مفترق طرق… فاختر طريقك الآن”
 
-❝ أحيانًا ترى الأمور من زاويتين: يومًا تبتسم… ويومًا تتوجّس. ❞
+❝ أحيانًا ترى الأمور من زاويتين:
+يومًا تبتسم… ويومًا تتوجّس.
+تفرح بلحظة، ثم تفسدها فكرة: “وماذا لو…؟” ❞
 
 🛠 خطوات صغيرة تساعدك على الاستقرار الذهني:
 • قلل التحليل الزائد
@@ -83,7 +137,8 @@
 
 📍 عنوان: “ما تملكه… أثمن مما تظن”
 
-❝ تفكيرك الإيجابي ليس صدفة، بل نعمة ومهارة. ❞
+❝ تفكيرك الإيجابي ليس صدفة، بل نعمة ومهارة.
+قليلون من يستطيعون أن ينظروا للحياة بتقدير… ويستخرجوا النور من العاديّ. ❞
 
 🔁 نصائح للاستمرار والتأثير:
 • اكتب شيئًا واحدًا كنت ممتنًا له كل يوم
@@ -97,30 +152,22 @@
     questions.forEach((q, i) => {
       const div = document.createElement("div");
       div.className = "question";
-      div.innerHTML = `
-        <label><strong>${i + 1}. ${q.text}</strong></label>
-        <select required name="q${i}">
-          <option value="">اختر درجة</option>
-          <option value="1">1 - لا تنطبق إطلاقًا</option>
-          <option value="2">2 - نادرًا ما تنطبق</option>
-          <option value="3">3 - أحيانًا تنطبق</option>
-          <option value="4">4 - غالبًا ما تنطبق</option>
-          <option value="5">5 - تنطبق تمامًا</option>
-        </select>
-      `;
+      div.innerHTML = <p>${i + 1}. ${q.text}</p><div class="options"> +
+        [1, 2, 3, 4, 5].map(val =>
+          <label><input type="radio" name="q${i}" value="${val}" required> ${val}</label>
+        ).join(' ') + </div>;
       container.appendChild(div);
     });
 
     document.getElementById("quizForm").addEventListener("submit", function(e) {
       e.preventDefault();
       let score = 0;
-      const selects = document.querySelectorAll("select");
+      const form = new FormData(this);
 
-      for (let i = 0; i < selects.length; i++) {
-        const val = parseInt(selects[i].value);
-        const isPositive = questions[i].positive;
-        score += isPositive ? val : (6 - val);
-      }
+      questions.forEach((q, i) => {
+        const val = parseInt(form.get("q" + i));
+        score += q.positive ? val : (6 - val);
+      });
 
       const resultBox = document.getElementById("result");
       resultBox.style.display = "block";
