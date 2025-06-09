@@ -1,147 +1,88 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>كيف ترى الحياة؟</title>
+    <title>مقياس التفكير الإيجابي والسلبي - تفاعلي</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.8; padding: 20px; background-color: #f9f9f9; color: #222; }
-        h2 { color: #004477; }
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #333; direction: rtl; padding: 20px; }
         .question { margin-bottom: 20px; }
-        .result { margin-top: 30px; padding: 10px; background-color: #eef; border: 1px solid #99c; }
+        .question p { font-weight: bold; }
+        button { padding: 10px; background: #007b5e; color: white; border: none; cursor: pointer; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 5px; display: none; white-space: pre-wrap; }
+        .negative { background: #ffcccc; }
+        .neutral { background: #fff3cd; }
+        .positive { background: #ccffcc; }
     </style>
 </head>
 <body>
-    <h2>كيف ترى الحياة؟</h2>
-    <p>هذا النموذج مخصص لقياس نظرتك للحياة من خلال مواقف حقيقية. لا توجد إجابة صحيحة أو خاطئة، أجب بصدق، وستحصل على نتيجتك مباشرة.</p>
-  
-    <form id="quizForm">
-        <div class="question">
-            <strong>1. رُفضتَ بعد مقابلة لوظيفة كنت تطمح لها، ماذا تقول؟</strong><br>
-            <input type="radio" name="q1" value="2"> ربما لم أكن الأفضل، وسأسعى للتحسن.<br>
-            <input type="radio" name="q1" value="0"> الحياة لا تعطيني فرصة، الكل ضدي.<br>
-            <input type="radio" name="q1" value="1"> حظ سيء كالعادة، لا أكثر.<br>
-        </div>
-        <div class="question">
-            <strong>2. حدث خلاف بينك وبين أحد الأقرباء بسبب سوء فهم، ما موقفك؟</strong><br>
-            <input type="radio" name="q2" value="0"> هو من بدأ، فلا حاجة للتواصل مجددًا.<br>
-            <input type="radio" name="q2" value="2"> أحاول إصلاح الأمر وفتح باب الحوار.<br>
-            <input type="radio" name="q2" value="1"> الزمن كفيل بحل الأمور.<br>
-        </div>
-        <div class="question">
-            <strong>3. أخفقت في اختبار كان يعني لك الكثير، فماذا تقول لنفسك؟</strong><br>
-            <input type="radio" name="q3" value="2"> سأتعلم من الخطأ وأحاول مجددًا.<br>
-            <input type="radio" name="q3" value="0"> لست ذكيًا بما يكفي.<br>
-            <input type="radio" name="q3" value="1"> ما الفائدة من كل هذا؟<br>
-        </div>
-        <div class="question">
-            <strong>4. أحرجك موقف أمام الآخرين دون قصد، فكيف تتصرف؟</strong><br>
-            <input type="radio" name="q4" value="1"> أحاول تجاهله ولكن أتضايق داخليًا.<br>
-            <input type="radio" name="q4" value="2"> أبتسم وأتعامل معه بخفة ظل.<br>
-            <input type="radio" name="q4" value="0"> أخجل كثيرًا وقد أتجنب الناس لاحقًا.<br>
-        </div>
-        <div class="question">
-            <strong>5. خطيبك أو من تحب رآك ثم قرر الانسحاب، كيف تفسر ذلك؟</strong><br>
-            <input type="radio" name="q5" value="2"> كل شيء قسمة ونصيب، وأنا واثق من نفسي.<br>
-            <input type="radio" name="q5" value="1"> ربما لم أكن كما توقع.<br>
-            <input type="radio" name="q5" value="0"> لا أحد يرضى بي، أكيد فيني خلل.<br>
-        </div>
-        <div class="question">
-            <strong>6. انقلبت خططك فجأة بسبب ظرف طارئ، فكيف تتعامل؟</strong><br>
-            <input type="radio" name="q6" value="2"> أتأقلم بسرعة وأبحث عن بدائل.<br>
-            <input type="radio" name="q6" value="1"> أتضايق قليلاً ثم أهدأ.<br>
-            <input type="radio" name="q6" value="0"> أتوقف عن كل شيء وأحبط.<br>
-        </div>
-        <div class="question">
-            <strong>7. شخص ظلمني وتكلم عني بسوء، ماذا سيكون رد فعلك؟</strong><br>
-            <input type="radio" name="q7" value="2"> أسامحه وأتجاهله قدر الإمكان.<br>
-            <input type="radio" name="q7" value="1"> لا أرد لكن أحتفظ بالألم داخلي.<br>
-            <input type="radio" name="q7" value="0"> لن أنساه أبدًا وسأرد يومًا ما.<br>
-        </div>
-        <div class="question">
-            <strong>8. فُوّتت عليك فرصة كنت تنتظرها طويلًا، فبماذا تشعر؟</strong><br>
-            <input type="radio" name="q8" value="2"> الفرص لا تنتهي، وسأسعى لغيرها.<br>
-            <input type="radio" name="q8" value="1"> أشعر بخيبة ولكن الحياة تستمر.<br>
-            <input type="radio" name="q8" value="0"> دائمًا الفرص تضيع من يدي.<br>
-        </div>
-        <div class="question">
-            <strong>9. عندما ترى من هو أقل منك حظًّا، بماذا تشعر؟</strong><br>
-            <input type="radio" name="q9" value="2"> أحمد الله وأحاول مساعدته إن استطعت.<br>
-            <input type="radio" name="q9" value="0"> أشعر أني قد أكون مثله يومًا.<br>
-            <input type="radio" name="q9" value="1"> أشفق عليه وأتضايق داخليًا فقط.<br>
-        </div>
-        <div class="question">
-            <strong>10. كيف ترى الحياة بشكل عام؟</strong><br>
-            <input type="radio" name="q10" value="0"> مليئة بالظلم والمصاعب ولا أمل.<br>
-            <input type="radio" name="q10" value="2"> حياة تُعاش مرة واحدة وتستحق المحاولة.<br>
-            <input type="radio" name="q10" value="1"> لا بأس بها، يوم حلو ويوم مر.<br>
-        </div>
 
-          <p>إعداد: محمد حسن سفران<br>بروفيسور بقسم التعليم والتعلم<br>جامعة الملك خالد – المملكة العربية السعودية</p>
-        
-        <button type="button" onclick="calculateScore()">عرض النتيجة</button>
-    </form>
+<h2>🧠 مقياس التفكير الإيجابي والسلبي</h2>
+<p>هل تنظر للحياة بعين ممتنّة… أم بعين متوجّسة؟</p>
+<p>بحكم تخصصي في التربية واهتمامي بأساليب التفكير، صممت هذا المقياس لمساعدة الأفراد على التعرف على نمط تفكيرهم، لما لذلك من تأثير كبير على نظرتهم للحياة وسلوكهم اليومي.</p>
+<p>ويهدف هذا المقياس إلى التعرف على أسلوب تفكير الفرد في المواقف الحياتية المختلفة، ومعرفة ما إذا كان يميل إلى التفكير الإيجابي أم السلبي، حيث يُعد التعرف على نمط التفكير خطوة مهمة في تعزيز السلوك الإيجابي وتعديل السلوك السلبي، وبناء مرونة نفسية تسهم في جودة الحياة.</p>
+<p>مع رجائي بالفائدة والنفع،<br>محمد حسن آل سفران<br>بروفيسور بقسم التعليم والتعلم<br>جامعة الملك خالد – المملكة العربية السعودية</p>
 
-    <hr>
-<div id="feedback-section" style="margin-top: 20px;">
-  <h3>✨ تقييمك للنموذج</h3>
+<form id="quiz">
 
-  <label for="resultFeedback">هل كانت النتيجة واقعية؟</label><br>
-  <select id="resultFeedback" name="resultFeedback" style="margin-bottom: 10px;">
-    <option value="نعم">نعم</option>
-    <option value="إلى حد ما">إلى حد ما</option>
-    <option value="لا">لا</option>
-  </select><br>
+<script>
+const questions = [
+    "عندما أواجه موقفًا صعبًا، أحاول طمأنة نفسي بأنني سأتجاوزه.",
+    "أسترجع قبل النوم مواقف أثرت في نفسي، سواء كانت قديمة أو حديثة.",
+    "أُفسّر غالبًا المواقف الصعبة على أنها تجارب أتعلم منها.",
+    "أُفكّر غالبًا أن التعامل مع أغلب الأمور في حياتي ليس سهلًا.",
+    "أُؤمن أن المستقبل سيكون أفضل من حاضري مهما كانت التحديات.",
+    "أُفكّر أحيانًا أن حظي يعاكسني في كثير من الأمور.",
+    "أُحاول غالبًا إيجاد حلول عند وقوع مشكلة بدلًا من التفكير في من ألومه.",
+    "أُفكّر غالبًا في الأمور التي أزعجتني، وأنسى بسرعة ما أسعدني.",
+    "أُفكّر أحيانًا أن بعض الناس يقصدون إزعاجي بكلامهم أو تصرفاتهم.",
+    "أُفكّر أن الخطأ فرصة جديدة للتعلّم.",
+    "أُفكّر أحيانًا أن الماضي مليء بالأخطاء التي يصعب تجاوزها.",
+    "تخطر في بالي أحيانًا أفكار أن شيئًا سيئًا قد يحدث فجأة."
+];
 
-  <label for="userMessage">هل لديك رسالة أو تعليق لصاحب النموذج؟</label><br>
-  <textarea id="userMessage" name="userMessage" rows="4" cols="50" placeholder="اكتب رسالتك هنا..." style="margin-top: 5px;"></textarea>
-</div>
-    
-    <div class="result" id="resultBox" style="display:none;"></div>
+questions.forEach((question, index) => {
+    document.write(`
+    <div class="question">
+        <p>${index + 1}. ${question}</p>
+        <select required>
+            <option value="">اختر درجة</option>
+            <option value="1">1 - لا تنطبق إطلاقًا</option>
+            <option value="2">2 - نادرًا ما تنطبق</option>
+            <option value="3">3 - أحيانًا تنطبق</option>
+            <option value="4">4 - غالبًا ما تنطبق</option>
+            <option value="5">5 - تنطبق تمامًا</option>
+        </select>
+    </div>
+    `);
+});
+</script>
 
-    <script>
-        function calculateScore() {
-            let total = 0;
-            for (let i = 1; i <= 10; i++) {
-                const options = document.getElementsByName("q" + i);
-                for (const opt of options) {
-                    if (opt.checked) {
-                        total += parseInt(opt.value);
-                    }
-                }
-            }
+<button type="button" onclick="calculate()">احسب النتيجة</button>
+</form>
 
-            const resultBox = document.getElementById("resultBox");
-            resultBox.style.display = "block";
+<div id="result" class="result"></div>
 
-            let message = "";
-            if (total >= 17) {
-                message = "<strong>🌟 إيجابي التفكير:</strong> لديك نظرة متفائلة ومرنة للحياة، وتُحسن التعامل مع الصعوبات.";
-            } else if (total >= 10) {
-                message = "<strong>⚖️ متوازن التفكير:</strong> أحيانًا تميل للإيجابية وأحيانًا للسلبية، ويمكنك تحسين رؤيتك بالحكمة والتجربة.";
-            } else {
-                message = "<strong>⚠️ سلبي التفكير:</strong> تميل لرؤية الحياة من جانبها المظلم، وقد يفيدك أن تراجع طريقة تفكيرك وتعزز تفاؤلك.";
-            }
+<script>
+function calculate() {
+    const selects = document.querySelectorAll("select");
+    let score = 0;
+    selects.forEach(select => { score += parseInt(select.value); });
 
-            message += "<br><br><em>هذا النموذج لا يُشخّص الحالة النفسية ولا يُغني عن المختص، بل يساعدك في التعرف على نمط تفكيرك.</em>";
-            resultBox.innerHTML = message;
-        }
-      // إرسال البيانات إلى Google Sheets
-const feedback = document.querySelector('textarea[name="userMessage"]');
-const rating = document.querySelector('select[name="resultFeedback"]');
+    const result = document.getElementById("result");
+    result.style.display = "block";
 
-if ((feedback && feedback.value.trim() !== "") || (rating && rating.value !== "")) {
-    const bodyData = feedback=${encodeURIComponent(feedback.value.trim())}&rating=${encodeURIComponent(rating.value)};
-
-    fetch("https://script.google.com/macros/s/AKfyc.../exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: bodyData
-    });
+    if(score <= 30) {
+        result.className = "result negative";
+        result.textContent = نتيجتك: التفكير السلبي\n\nرسالة لمن أنهكه التفكير الطويل... (أضف النص الكامل الذي كتبته مسبقًا هنا للتغذية السلبية).;
+    } else if(score <= 45) {
+        result.className = "result neutral";
+        result.textContent = نتيجتك: التفكير المختلط\n\nأنت على مفترق طرق... (أضف النص الكامل الذي كتبته مسبقًا هنا للتغذية الحيادية).;
+    } else {
+        result.className = "result positive";
+        result.textContent = نتيجتك: التفكير الإيجابي\n\nما تملكه أثمن مما تظن... (أضف النص الكامل الذي كتبته مسبقًا هنا للتغذية الإيجابية).;
+    }
 }
-    </script>
+</script>
+
 </body>
 </html>
